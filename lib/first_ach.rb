@@ -1,6 +1,16 @@
+# frozen_string_literal: true
+
+require 'active_support/concern'
+require 'active_support/core_ext/string'
+require 'nokogiri'
 require 'ostruct'
 
 require 'first_ach/configuration'
+require 'first_ach/xml'
+
+require 'first_ach/customer/account'
+require 'first_ach/customer/payment'
+require 'first_ach/customer/profile'
 require 'first_ach/version'
 
 module FirstACH

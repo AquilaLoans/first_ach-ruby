@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 require 'pry'
 
@@ -36,3 +38,12 @@ RSpec.configure do |config|
 end
 
 require_relative 'support/vcr'
+
+RSpec.shared_context 'configure', shared_context: :metadata do
+  before(:each) do
+    FirstACH.configure do |config|
+      config.cobrand_login    = ENV.fetch('FIRST_ACH_LOGIN_ID')
+      config.cobrand_password = ENV.fetch('FIRST_ACH_TRANSACTION_KEY')
+    end
+  end
+end

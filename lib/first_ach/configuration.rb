@@ -1,6 +1,12 @@
+# frozen_string_literal: true
+
 module FirstACH
   class Configuration < OpenStruct
-    DEFAULTS = {}.freeze
+    DEFAULTS = {
+      environment:     'demo',
+      login_id:        nil,
+      transaction_key: nil
+    }.freeze
 
     # Creates a new Configuration from the passed in parameters
     # @param params [Hash] configuration options

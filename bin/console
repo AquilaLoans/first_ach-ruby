@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'bundler/setup'
 require 'dotenv/load'
@@ -6,6 +7,11 @@ require 'first_ach'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
+
+FirstACH.configure do |config|
+  config.login_id        = ENV.fetch('FIRST_ACH_LOGIN_ID')
+  config.transaction_key = ENV.fetch('FIRST_ACH_TRANSACTION_KEY')
+end
 
 require 'pry'
 Pry.start
