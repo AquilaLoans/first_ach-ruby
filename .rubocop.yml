@@ -1,0 +1,33 @@
+AllCops:
+  DisplayCopNames: true
+  Include:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'config.ru'
+    - '**/*.rake'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%q': ()
+    '%Q': ()
+    '%i': []
+    '%I': []
+    '%r': ()
+    '%s': ()
+    '%w': []
+    '%W': []
+    '%x': ()
