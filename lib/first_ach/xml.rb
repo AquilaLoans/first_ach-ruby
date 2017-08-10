@@ -24,10 +24,9 @@ module FirstACH
       end
 
       def build_authentication(document)
-        document.requestorAuthentication do
-          document.loginID        ::FirstACH.configuration.login_id
-          document.transactionKey ::FirstACH.configuration.transaction_key
-        end
+        build_object(document, 'requestorAuthentication',
+                     loginID:        ::FirstACH.configuration.login_id,
+                     transactionKey: ::FirstACH.configuration.transaction_key)
       end
 
       def build_object(document, name, object)
