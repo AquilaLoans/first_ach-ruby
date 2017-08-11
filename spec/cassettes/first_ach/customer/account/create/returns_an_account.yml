@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://demo.firstach.com/API/processAPIRequest.aspx
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <createCustomerAccount xmlns="https://www.firstach.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://demo.firstach.com ../XSD/API_CreateCustomerAccount.xsd"><requestorAuthentication><loginID>FIRST_ACH_LOGIN_ID</loginID><transactionKey>FIRST_ACH_TRANSACTION_KEY</transactionKey></requestorAuthentication><account><customerToken>vsVKWkEMolinPO0/YVGPLg==</customerToken><accountName>New Account</accountName><accountType>Personal Checking</accountType><routingNumber>111111118</routingNumber><accountNumber>9876543210</accountNumber><isDefault>1</isDefault><bankName>Capital One</bankName><bankCity>Mitchellville</bankCity><bankState>MD</bankState><authOptionForm>Until Revoked</authOptionForm><authOptionVoice>Existing Relationship</authOptionVoice><authDate>2011-03-05</authDate></account></createCustomerAccount>
+    headers:
+      Accept:
+      - application/xml
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.3.0p0
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '874'
+      Host:
+      - demo.firstach.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASP.NET_SessionId=xhjsaigduzb3swxke1dme4c4; path=/; HttpOnly
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 11 Aug 2017 23:31:22 GMT
+      Content-Length:
+      - '423'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><createCustomerAccountResponse
+        xmlns="https://www.firstach.com"><responseMessages xmlns=""><responseCode>0000</responseCode><responseText>SUCCESS.
+        The Account was created successfully</responseText></responseMessages><account
+        xmlns=""><customerToken>vsVKWkEMolinPO0/YVGPLg==</customerToken><accountToken>nLx8MUtHO711LFJFKeoLSw==</accountToken></account></createCustomerAccountResponse>
+    http_version: 
+  recorded_at: Fri, 11 Aug 2017 23:31:36 GMT
+recorded_with: VCR 3.0.3

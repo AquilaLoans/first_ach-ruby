@@ -2,9 +2,11 @@
 
 require 'active_support/concern'
 require 'active_support/core_ext/string'
+require 'rest-client'
 require 'nokogiri'
 require 'ostruct'
 
+require 'first_ach/client'
 require 'first_ach/configuration'
 require 'first_ach/xml'
 

@@ -11,7 +11,7 @@ module FirstACH
             build_authentication(document)
             yield document
           end
-        end.to_xml
+        end.to_xml(save_with: Nokogiri::XML::Node::SaveOptions::NO_EMPTY_TAGS)
       end
 
       def build_namespace(document, endpoint)
@@ -30,19 +30,15 @@ module FirstACH
       end
 
       def build_object(document, name, object)
-        return if object.nil?
-
         name = "#{name}_" if [:type, :class, :id].include?(name.to_sym)
 
         case object
-        when String, Integer, Integer, Numeric, Float, Symbol, Range
+        when String, Integer, Integer, Numeric, Float, Symbol, Range, NilClass
           document.public_send(name, object)
-        when Hash
+        when Array, Hash
           document.public_send(name) do
             object.each { |key, value| build_object(document, key, value) }
           end
-        else # Array
-          raise 'NotImplemented'
         end
       end
 
@@ -50,8 +46,7 @@ module FirstACH
         arguments_hash = {}
 
         method(method_context).parameters.map(&:last).each do |key|
-          value = invocation_context.local_variable_get(key)
-          arguments_hash[key.to_s.camelize(:lower).to_sym] = value unless value.nil?
+          arguments_hash[key.to_s.camelize(:lower).to_sym] = invocation_context.local_variable_get(key)
         end
 
         arguments_hash
