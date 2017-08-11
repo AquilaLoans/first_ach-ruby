@@ -2,6 +2,7 @@
 
 module FirstACH
   module Customer
+    # Customer Payment
     class Payment
       include FirstACH::XML
 
@@ -41,7 +42,6 @@ module FirstACH
         account_parameters  = { accountToken:  payment_parameters.delete(:accountToken) }
         customer_parameters = { customerToken: payment_parameters.delete(:customerToken) }
         payment_parameters  = SCHEMA.map { |key| [key, payment_parameters[key]] }
-
 
         payload = build_document('createCustomerPayment') do |document|
           build_object(document, 'paymentDetail', payment_parameters)

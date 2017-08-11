@@ -2,6 +2,7 @@
 
 module FirstACH
   module Customer
+    # Customer Profile
     class Profile
       include FirstACH::XML
 
@@ -24,13 +25,15 @@ module FirstACH
       # @param driver_licence_state [String - Alpha 2]          Valid 2-character state abbreviation
       # @param custom_one           [String - Alphanumeric 100] Permitted if custom field has been previously enabled
       # @param custom_two           [String - Alphanumeric 100] Permitted if custom field has been previously enabled
-      def self.create(name:, id: nil, address:, city:, state:, zip:, phone:, email: nil, fax: nil, driver_licence_id: nil, driver_licence_state: nil, custom1: nil, custom2: nil)
+      def self.create(name:, id: nil, address:, city:, state:, zip:, phone:, email: nil, fax: nil, driver_licence_id: nil, driver_licence_state: nil, custom_one: nil, custom_two: nil)
         parameters                = arguments(__method__, binding)
         parameters[:customerName] = parameters.delete(:name)
         parameters[:customerID]   = parameters.delete(:id)
         parameters[:address1]     = parameters.delete(:address)
         parameters[:drvLic]       = parameters.delete(:driverLicenceId)
         parameters[:drvState]     = parameters.delete(:driverLicenceState)
+        parameters[:custom1]      = parameters.delete(:customOne)
+        parameters[:custom2]      = parameters.delete(:customTwo)
         parameters                = SCHEMA.map { |key| [key, parameters[key]] }
 
         payload = build_document('createCustomerProfile') do |document|

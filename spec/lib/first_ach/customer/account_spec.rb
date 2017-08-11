@@ -43,6 +43,5 @@ RSpec.describe FirstACH::Customer::Account do
     it 'returns an account' do
       expect(request.account).to be_an OpenStruct
     end
-
   end
 end

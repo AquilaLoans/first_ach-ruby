@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module FirstACH
+  # Configuration
   class Configuration < OpenStruct
     DEFAULTS = {
       environment:     'demo',

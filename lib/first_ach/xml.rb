@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module FirstACH
+  # XML Builder
+  # @!visibility private
   module XML
     extend ActiveSupport::Concern
 

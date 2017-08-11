@@ -2,6 +2,7 @@
 
 module FirstACH
   module Customer
+    # Customer Account
     class Account
       include FirstACH::XML
 

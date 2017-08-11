@@ -15,7 +15,7 @@ RSpec.describe FirstACH::Customer::Payment do
       frequency: :monthly,
       number_of_payments: 2,
       memo: 'Loan repayment',
-      is_private: true,
+      is_private: true
     }
   end
 
@@ -40,6 +40,5 @@ RSpec.describe FirstACH::Customer::Payment do
     it 'returns a payment' do
       expect(request.payment).to be_an OpenStruct
     end
-
   end
 end

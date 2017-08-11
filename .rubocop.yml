@@ -11,16 +11,19 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
 
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
 Metrics/LineLength:
   Enabled: false
 
 Metrics/MethodLength:
   Enabled: false
 
-Metrics/BlockLength:
-  Enabled: false
-
-Style/Documentation:
+Metrics/ParameterLists:
   Enabled: false
 
 Style/PercentLiteralDelimiters:

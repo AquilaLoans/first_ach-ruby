@@ -15,6 +15,7 @@ require 'first_ach/customer/payment'
 require 'first_ach/customer/profile'
 require 'first_ach/version'
 
+# Ruby wrapper for the FirstACH API
 module FirstACH
   class << self
     attr_reader :configuration

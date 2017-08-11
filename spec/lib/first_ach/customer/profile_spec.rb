@@ -42,6 +42,5 @@ RSpec.describe FirstACH::Customer::Profile do
     it 'returns a profile' do
       expect(request.customer).to be_an OpenStruct
     end
-
   end
 end

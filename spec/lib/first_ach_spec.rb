@@ -11,7 +11,7 @@ RSpec.describe FirstACH do
         described_class.configure(described_class::Configuration.new(new_config))
       end
 
-      xit 'sets the configuration based on param' do
+      it 'sets the configuration based on param' do
         expect(described_class.configuration.secret).to eql new_config[:secret]
       end
     end
@@ -23,7 +23,7 @@ RSpec.describe FirstACH do
         end
       end
 
-      xit 'sets configuration based on the block' do
+      it 'sets configuration based on the block' do
         expect(described_class.configuration.secret).to eql new_config[:secret]
       end
     end

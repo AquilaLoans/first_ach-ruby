@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-require 'ap'
+
 module FirstACH
+  # HTTP Client Interface
   class Client
     def self.execute(method, payload)
       url = "https://#{FirstACH.configuration.environment}.firstach.com/API/processAPIRequest.aspx"
@@ -17,6 +18,7 @@ module FirstACH
       parse_object(Nokogiri::XML(raw_response.body).root)
     end
 
+    # @!visibility private
     def self.parse_object(node)
       case node
       when Nokogiri::XML::Document, Nokogiri::XML::Element
@@ -31,6 +33,7 @@ module FirstACH
     end
     private_class_method :parse_object
 
+    # @!visibility private
     def self.default_headers
       {
         'Accept'       => 'application/xml',
@@ -38,6 +41,5 @@ module FirstACH
       }
     end
     private_class_method :default_headers
-
   end
 end

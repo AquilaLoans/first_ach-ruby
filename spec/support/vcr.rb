@@ -3,7 +3,7 @@
 require 'vcr'
 require 'active_support/core_ext/string'
 
-ENV['FIRST_ACH_LOGIN_ID']        = ENV.fetch('FIRST_ACH_LOGIN_ID',    'FIRST_ACH_LOGIN_ID')
+ENV['FIRST_ACH_LOGIN_ID']        = ENV.fetch('FIRST_ACH_LOGIN_ID', 'FIRST_ACH_LOGIN_ID')
 ENV['FIRST_ACH_TRANSACTION_KEY'] = ENV.fetch('FIRST_ACH_TRANSACTION_KEY', 'FIRST_ACH_TRANSACTION_KEY')
 
 VCR.configure do |config|
