@@ -8,6 +8,7 @@ require 'ostruct'
 
 require 'first_ach/client'
 require 'first_ach/configuration'
+require 'first_ach/error'
 require 'first_ach/xml'
 
 require 'first_ach/customer/account'

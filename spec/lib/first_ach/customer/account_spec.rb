@@ -40,8 +40,13 @@ RSpec.describe FirstACH::Customer::Account do
       expect(request).to be_an OpenStruct
     end
 
-    it 'returns an account' do
-      expect(request.account).to be_an OpenStruct
+    it 'returns an account_token' do
+      expect(request.account_token).to be_an String
     end
+
+    it 'returns a customer_token' do
+      expect(request.customer_token).to be_an String
+    end
+
   end
 end

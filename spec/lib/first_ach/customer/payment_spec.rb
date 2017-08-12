@@ -37,8 +37,20 @@ RSpec.describe FirstACH::Customer::Payment do
       expect(request).to be_an OpenStruct
     end
 
-    it 'returns a payment' do
-      expect(request.payment).to be_an OpenStruct
+    it 'returns an account_token' do
+      expect(request.account_token).to be_an String
+    end
+
+    it 'returns a customer_token' do
+      expect(request.customer_token).to be_an String
+    end
+
+    it 'returns an payment_id' do
+      expect(request.payment_id).to be_an String
+    end
+
+    it 'returns a recurring_id' do
+      expect(request.recurring_id).to be_an String
     end
   end
 end

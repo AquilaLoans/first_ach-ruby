@@ -39,8 +39,8 @@ RSpec.describe FirstACH::Customer::Profile do
       expect(request).to be_an OpenStruct
     end
 
-    it 'returns a profile' do
-      expect(request.customer).to be_an OpenStruct
+    it 'returns a customer_token' do
+      expect(request.customer_token).to be_an String
     end
   end
 end
