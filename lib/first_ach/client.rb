@@ -3,7 +3,6 @@
 module FirstACH
   # HTTP Client Interface
   class Client
-
     SUCCESS_CODE = '0000'
 
     def self.execute(method, payload)
@@ -20,11 +19,9 @@ module FirstACH
 
       response = parse_object(Nokogiri::XML(raw_response.body).root)
 
-      if response.messages.code == SUCCESS_CODE
-        response[response.to_h.tap { |hash| hash.delete(:messages) }.keys.last]
-      else
-        raise FirstACH::Error.new(response.messages)
-      end
+      raise FirstACH::Error, response.messages if response.messages.code != SUCCESS_CODE
+
+      response[response.to_h.tap { |hash| hash.delete(:messages) }.keys.last]
     end
 
     # @!visibility private

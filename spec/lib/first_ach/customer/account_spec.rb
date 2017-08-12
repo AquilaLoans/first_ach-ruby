@@ -47,6 +47,5 @@ RSpec.describe FirstACH::Customer::Account do
     it 'returns a customer_token' do
       expect(request.customer_token).to be_an String
     end
-
   end
 end
