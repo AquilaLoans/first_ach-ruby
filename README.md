@@ -1,4 +1,4 @@
-# FirstACH [![Build Status](https://img.shields.io/travis/AquilaLoans/first_ach-ruby.svg)](https://travis-ci.org/AquilaLoans/first_ach-ruby) [![Code Climate](https://img.shields.io/codeclimate/github/AquilaLoans/first_ach-ruby.svg)](https://codeclimate.com/github/AquilaLoans/first_ach-ruby) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/AquilaLoans/first_ach-ruby.svg)](https://codeclimate.com/github/AquilaLoans/first_ach-ruby/coverage)
+# FirstACH [![Build Status](https://img.shields.io/travis/AquilaLoans/first_ach-ruby.svg)](https://travis-ci.org/AquilaLoans/first_ach-ruby) [![Code Climate](https://img.shields.io/codeclimate/github/AquilaLoans/first_ach-ruby.svg)](https://codeclimate.com/github/AquilaLoans/first_ach-ruby) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/AquilaLoans/first_ach-ruby.svg)](https://codeclimate.com/github/AquilaLoans/first_ach-ruby/coverage) [![Inline docs](http://inch-ci.org/github/AquilaLoans/first_ach-ruby.svg?branch=develop)](http://inch-ci.org/github/AquilaLoans/first_ach-ruby)
 
 ## Installation
 
