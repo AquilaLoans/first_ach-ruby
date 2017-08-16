@@ -16,9 +16,9 @@ RSpec.describe FirstACH::Customer::Account do
       bank_name: 'Capital One',
       bank_city: 'Mitchellville',
       bank_state: 'MD',
-      auth_option_form: :until_revoked,
-      auth_option_voice: :existing_relationship,
-      auth_date: Date.parse('2011-03-05')
+      authorization_type: :until_revoked,
+      authorization_option_voice: :existing_relationship,
+      authorized_on: Date.parse('2011-03-05')
     }
   end
 
