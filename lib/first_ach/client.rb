@@ -19,7 +19,7 @@ module FirstACH
 
       response = parse_object(Nokogiri::XML(raw_response.body).root)
 
-      raise FirstACH::Error, response.messages if response.messages.code != SUCCESS_CODE
+      raise FirstACH::Error, "#{response.messages} RAW RESPONSE: #{raw_response.body}" if response.messages.code != SUCCESS_CODE
 
       response[response.to_h.tap { |hash| hash.delete(:messages) }.keys.last]
     end
