@@ -22,7 +22,7 @@ module FirstACH
       if response.messages.code == SUCCESS_CODE
         response[response.to_h.tap { |hash| hash.delete(:messages) }.keys.last]
       else
-        response.messages.message =  "#{response.messages.message} RAW RESPONSE: #{raw_response.body}"
+        response.messages.message =  "#{response.messages.message} PAYLOAD: #{payload} RAW RESPONSE: #{raw_response.body}"
 
         raise FirstACH::Error, response.messages
       end
