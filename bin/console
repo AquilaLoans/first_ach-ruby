@@ -11,6 +11,7 @@ require 'first_ach'
 FirstACH.configure do |config|
   config.login_id        = ENV.fetch('FIRST_ACH_LOGIN_ID')
   config.transaction_key = ENV.fetch('FIRST_ACH_TRANSACTION_KEY')
+  config.timeout         = ENV.fetch('FIRST_ACH_TIMEOUT')
 end
 
 require 'pry'

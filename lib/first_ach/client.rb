@@ -12,16 +12,21 @@ module FirstACH
         method:  method,
         url:     url,
         headers: default_headers,
-        payload: payload
+        payload: payload,
+        timeout: ::FirstACH.configuration.timeout
       )
 
       return nil if raw_response.body.empty?
 
       response = parse_object(Nokogiri::XML(raw_response.body).root)
 
-      raise FirstACH::Error, response.messages if response.messages.code != SUCCESS_CODE
+      if response.messages.code == SUCCESS_CODE
+        response[response.to_h.tap { |hash| hash.delete(:messages) }.keys.last]
+      else
+        response.messages.message =  "#{response.messages.message} PAYLOAD: #{payload} RAW RESPONSE: #{raw_response.body}"
 
-      response[response.to_h.tap { |hash| hash.delete(:messages) }.keys.last]
+        raise FirstACH::Error, response.messages
+      end
     end
 
     # @!visibility private

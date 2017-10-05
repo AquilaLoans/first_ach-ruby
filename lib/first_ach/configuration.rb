@@ -6,7 +6,8 @@ module FirstACH
     DEFAULTS = {
       environment:     'demo',
       login_id:        nil,
-      transaction_key: nil
+      transaction_key: nil,
+      timeout:         60
     }.freeze
 
     # Creates a new Configuration from the passed in parameters
