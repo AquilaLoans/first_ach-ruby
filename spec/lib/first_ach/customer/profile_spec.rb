@@ -9,7 +9,7 @@ RSpec.describe FirstACH::Customer::Profile do
     {
       name: 'Joe Customer',
       id: 'UG10910',
-      address: '1600 Pennsylvania Ave',
+      street_address: '1600 Pennsylvania Ave',
       city: 'Washington',
       state: 'DC',
       zip: '20036',
