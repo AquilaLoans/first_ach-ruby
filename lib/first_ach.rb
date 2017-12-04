@@ -14,6 +14,7 @@ require 'first_ach/xml'
 require 'first_ach/customer/account'
 require 'first_ach/customer/payment'
 require 'first_ach/customer/profile'
+require 'first_ach/payment/return'
 require 'first_ach/version'
 
 # Ruby wrapper for the FirstACH API
