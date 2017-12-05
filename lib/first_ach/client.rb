@@ -46,7 +46,7 @@ module FirstACH
             if child.name == 'payment'
               payments << parse_object(child)
             else
-              mapped_hash[child.name] = parse_object(child)
+              mapped_hash[parse_name(child.name)] = parse_object(child)
             end
           end
           mapped_hash[:payments] = payments
