@@ -39,14 +39,19 @@ module FirstACH
         else
           case node.name
           when 'getReturnsResponse'
-            mapped_hash = {}
-            node.children.each do |child|
-              if child.name == 'payment'
-                mapped_hash[:payment] << parse_object(child)
-              else
-                mapped_hash[child.name] = parse_object(child)
-              end
+          mapped_hash = {}
+          payments = Array.new
+
+          node.children.each do |child|
+            if child.name == 'payment'
+              payments << parse_object(child)
+            else
+              mapped_hash[child.name] = parse_object(child)
             end
+          end
+          mapped_hash[:payments] = payments
+
+          OpenStruct.new(mapped_hash)
           else
             OpenStruct.new(node.children.map { |child| [parse_name(child.name), parse_object(child)] }.to_h)
           end
