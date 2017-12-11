@@ -26,7 +26,7 @@ RSpec.describe FirstACH::Payment::Return do
     end
 
     it 'returns an OpenStruct' do
-      expect(request).to be_an OpenStruct
+      expect(request).to be_an Array
     end
   end
 end
