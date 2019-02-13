@@ -8,8 +8,8 @@ require 'first_ach/version'
 Gem::Specification.new do |spec|
   spec.name          = 'first_ach'
   spec.version       = FirstACH::VERSION
-  spec.authors       = ['Zane Wolfgang Pickett']
-  spec.email         = ['sirwolfgang@users.noreply.github.com']
+  spec.authors       = ['Zane Wolfgang Pickett', 'Jason Jacobs']
+  spec.email         = ['jason@aquilacashflow.com']
 
   spec.summary       = 'Ruby wrapper for the FirstACH API'
   spec.homepage      = 'https://github.com/AquilaLoans/first_ach-ruby'
