@@ -14,7 +14,8 @@ module FirstACH
         url:     url,
         headers: default_headers,
         payload: payload,
-        timeout: ::FirstACH.configuration.timeout
+        timeout: ::FirstACH.configuration.timeout,
+        verify_ssl: false
       )
 
       return nil if raw_response.body.empty?
